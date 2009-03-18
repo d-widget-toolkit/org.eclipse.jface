@@ -22,7 +22,6 @@ import org.eclipse.jface.resource.JFaceResources;
 
 import java.lang.all;
 import java.util.Set;
-import tango.util.Convert;
 
 /**
  * A field editor for an integer type preference.
@@ -121,7 +120,7 @@ public class IntegerFieldEditor : StringFieldEditor {
         if (text !is null) {
             int value = getPreferenceStore().getInt(getPreferenceName());
             text.setText( tango.text.convert.Integer.toString(value));//$NON-NLS-1$
-            oldValue = to!(String)( value ); //$NON-NLS-1$
+            oldValue = String_valueOf( value ); //$NON-NLS-1$
         }
 
     }

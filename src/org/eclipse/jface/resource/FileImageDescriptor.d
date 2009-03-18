@@ -34,8 +34,6 @@ import java.io.FileInputStream;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 
-import tango.util.log.Trace;
-
 /**
  * An image descriptor that loads its image information from a file.
  */
@@ -107,7 +105,7 @@ class FileImageDescriptor : ImageDescriptor {
                 result = new ImageData(in_);
             } catch (SWTException e) {
                 if (e.code !is SWT.ERROR_INVALID_IMAGE /+&& e.code !is SWT.ERROR_UNSUPPORTED_FORMAT+/) {
-                    Trace.formatln( "FileImageDescriptor getImageData SWTException for name={}", name );
+                    getDwtLogger().trace( __FILE__, __LINE__, "FileImageDescriptor getImageData SWTException for name={}", name );
                     throw e;
                     // fall through otherwise
                 }
@@ -129,7 +127,6 @@ class FileImageDescriptor : ImageDescriptor {
         InputStream is_ = null;
 
 //         if (location !is null) {
-// Trace.formatln( "FileImageDescriptor getStream importdata.length={} name={}",importdata.length, name );
             is_ = new ByteArrayInputStream(cast(byte[]) importdata);
 //             is_ = ClassInfoGetResourceAsStream( location, name);
 

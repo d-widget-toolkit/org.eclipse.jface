@@ -31,7 +31,6 @@ import org.eclipse.jface.util.Policy;
 
 import java.lang.all;
 import java.util.Set;
-import tango.util.Convert;
 
 /**
  * ViewerRow is the abstract superclass of the part that represents items in a
@@ -368,7 +367,7 @@ public abstract class ViewerRow : Cloneable {
      * @since 3.4
      */
     public void setStyleRanges(int columnIndex, StyleRange[] styleRanges) {
-        getItem().setData(KEY_TEXT_LAYOUT ~ to!(String)(columnIndex), new ArrayWrapperT!(StyleRange)(styleRanges));
+        getItem().setData(KEY_TEXT_LAYOUT ~ String_valueOf(columnIndex), new ArrayWrapperT!(StyleRange)(styleRanges));
     }
 
 
@@ -382,7 +381,7 @@ public abstract class ViewerRow : Cloneable {
      * @since 3.4
      */
     public StyleRange[] getStyleRanges(int columnIndex) {
-        return (cast(ArrayWrapperT!(StyleRange)) getItem().getData(KEY_TEXT_LAYOUT ~ to!(String)(columnIndex))).array;
+        return (cast(ArrayWrapperT!(StyleRange)) getItem().getData(KEY_TEXT_LAYOUT ~ String_valueOf(columnIndex))).array;
     }
     
     int getWidth(int columnIndex) {

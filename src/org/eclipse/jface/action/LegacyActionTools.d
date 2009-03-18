@@ -21,8 +21,6 @@ import java.lang.all;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
-static import tango.text.Text;
-alias tango.text.Text.Text!(char) StringBuffer;
 
 /**
  * <p>

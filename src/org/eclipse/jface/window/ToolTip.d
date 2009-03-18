@@ -14,8 +14,6 @@
 
 module org.eclipse.jface.window.ToolTip;
 
-import tango.util.log.Trace;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;

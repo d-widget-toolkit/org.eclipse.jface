@@ -20,8 +20,6 @@ import org.eclipse.jface.viewers.IElementComparer;
 
 import java.lang.all;
 import java.util.Enumeration;
-static import tango.text.Text;
-alias tango.text.Text.Text!(char) StringBuffer;
 
 /**
  * CustomHashtable associates keys with values. Keys and values cannot be null.

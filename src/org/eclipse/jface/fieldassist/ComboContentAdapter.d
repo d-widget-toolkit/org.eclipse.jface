@@ -24,8 +24,6 @@ import org.eclipse.swt.widgets.Control;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.Text;
-alias tango.text.Text.Text!(char) StringBuffer;
 /**
  * An {@link IControlContentAdapter} for SWT Combo controls. This is a
  * convenience class for easily creating a {@link ContentProposalAdapter} for
