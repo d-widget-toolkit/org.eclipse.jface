@@ -35,7 +35,6 @@ import org.eclipse.core.runtime.Assert;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /**
  * A cell editor that manages a text entry field.

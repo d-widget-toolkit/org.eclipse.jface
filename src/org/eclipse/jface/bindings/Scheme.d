@@ -25,7 +25,6 @@ import java.lang.all;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.HashSet;
-import tango.text.convert.Format;
 
 /**
  * <p>

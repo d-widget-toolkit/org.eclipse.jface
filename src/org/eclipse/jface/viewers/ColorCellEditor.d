@@ -35,7 +35,6 @@ import org.eclipse.swt.widgets.Tree;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /**
  * A cell editor that manages a color field.

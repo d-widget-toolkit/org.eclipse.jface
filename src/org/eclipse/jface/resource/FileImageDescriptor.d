@@ -35,7 +35,6 @@ import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 
 import tango.util.log.Trace;
-import tango.text.convert.Format;
 
 /**
  * An image descriptor that loads its image information from a file.

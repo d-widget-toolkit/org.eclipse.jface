@@ -30,7 +30,6 @@ import java.util.Iterator;
 import java.util.Set;
 import tango.io.Stdout;
 import tango.core.Exception;
-import tango.text.convert.Format;
 
 /**
  * Abstract base class for all contribution managers, and standard

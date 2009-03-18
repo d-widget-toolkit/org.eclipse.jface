@@ -60,7 +60,6 @@ import java.util.Set;
 import java.util.HashSet;
 static import tango.text.Text;
 alias tango.text.Text.Text!(char) StringBuffer;
-import tango.text.convert.Format;
 import tango.text.locale.Core;
 static import tango.text.Util;
 

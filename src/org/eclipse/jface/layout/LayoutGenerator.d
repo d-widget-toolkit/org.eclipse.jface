@@ -30,7 +30,6 @@ import org.eclipse.jface.util.Geometry;
 import java.lang.all;
 import java.util.List;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /* package */class LayoutGenerator {
 

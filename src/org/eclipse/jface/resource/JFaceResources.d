@@ -38,7 +38,6 @@ import java.util.Set;
 import java.util.ResourceBundle;
 import java.util.MissingResourceException;
 import java.util.MissingResourceException;
-import tango.text.convert.Format;
 /**
  * Utility methods to access JFace-specific resources.
  * <p>

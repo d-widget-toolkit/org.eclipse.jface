@@ -50,7 +50,6 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.ResourceBundle;
-import tango.text.convert.Format;
 
 /**
  * <p>

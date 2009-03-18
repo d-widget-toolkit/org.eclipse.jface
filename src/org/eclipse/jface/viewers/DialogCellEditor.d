@@ -36,7 +36,6 @@ import org.eclipse.jface.resource.JFaceResources;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /**
  * An abstract cell editor that uses a dialog.

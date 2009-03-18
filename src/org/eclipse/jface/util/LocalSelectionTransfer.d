@@ -23,7 +23,6 @@ import org.eclipse.jface.viewers.ISelection;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /**
  * A LocalSelectionTransfer may be used for drag and drop operations

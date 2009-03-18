@@ -22,7 +22,6 @@ import org.eclipse.jface.util.Util;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /**
  * <p>

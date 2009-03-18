@@ -34,7 +34,6 @@ import org.eclipse.core.runtime.Assert;
 
 import java.lang.all;
 import java.util.Set;
-import tango.text.convert.Format;
 
 /**
  * A cell editor that presents a list of items in a combo box. The cell editor's

@@ -54,7 +54,6 @@ import java.util.Set;
 import java.lang.JThread;
 static import tango.text.Text;
 import tango.io.Stdout;
-import tango.text.convert.Format;
 alias tango.text.Text.Text!(char) StringBuffer;
 /**
  * ContentProposalAdapter can be used to attach content proposal behavior to a
