@@ -44,7 +44,6 @@ import org.eclipse.core.runtime.ListenerList;
 
 import java.lang.all;
 import java.util.Set;
-import tango.io.Stdout;
 
 /**
  * ControlDecoration renders an image decoration near a control. It allows
@@ -1118,11 +1117,11 @@ public class ControlDecoration {
         }
         if (DEBUG) {
             if (listenerInstalls > 0) {
-                Stdout.formatln("LISTENER LEAK>>>CHECK TRACE ABOVE"); //$NON-NLS-1$
+                getDwtLogger.info( __FILE__, __LINE__, "LISTENER LEAK>>>CHECK TRACE ABOVE"); //$NON-NLS-1$
             } else if (listenerInstalls < 0) {
-                Stdout.formatln("REMOVED UNREGISTERED LISTENERS>>>CHECK TRACE ABOVE"); //$NON-NLS-1$
+                getDwtLogger.info( __FILE__, __LINE__, "REMOVED UNREGISTERED LISTENERS>>>CHECK TRACE ABOVE"); //$NON-NLS-1$
             } else {
-                Stdout.formatln("ALL INSTALLED LISTENERS WERE REMOVED."); //$NON-NLS-1$
+                getDwtLogger.info( __FILE__, __LINE__, "ALL INSTALLED LISTENERS WERE REMOVED."); //$NON-NLS-1$
             }
         }
     }
@@ -1201,7 +1200,7 @@ public class ControlDecoration {
     private void printAddListener(Widget widget, String listenerType) {
         listenerInstalls++;
         if (DEBUG) {
-            Stdout.formatln("Added listener>>>{} to>>>{}", listenerType, widget); //$NON-NLS-1$//$NON-NLS-2$
+            getDwtLogger.info( __FILE__, __LINE__, "Added listener>>>{} to>>>{}", listenerType, widget); //$NON-NLS-1$//$NON-NLS-2$
         }
     }
 
@@ -1211,7 +1210,7 @@ public class ControlDecoration {
     private void printRemoveListener(Widget widget, String listenerType) {
         listenerInstalls--;
         if (DEBUG) {
-            Stdout.formatln("Removed listener>>>{} from>>>{}", listenerType, widget); //$NON-NLS-1$//$NON-NLS-2$
+            getDwtLogger.info( __FILE__, __LINE__, "Removed listener>>>{} from>>>{}", listenerType, widget); //$NON-NLS-1$//$NON-NLS-2$
         }
     }
 }

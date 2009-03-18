@@ -49,7 +49,6 @@ import java.lang.all;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
-import tango.io.Stdout;
 
 /**
  * The <code>ToolBarContributionItem</code> class provides a wrapper for tool
@@ -164,8 +163,8 @@ public class ToolBarContributionItem : ContributionItem, IToolBarContributionIte
     private final bool checkDisposed() {
         if (disposed) {
             if (Policy.TRACE_TOOLBAR) {
-                Stdout.formatln("Method invocation on a disposed tool bar contribution item."); //$NON-NLS-1$
-                ExceptionPrintStackTrace( new Exception(null), Stdout );
+                getDwtLogger.info( __FILE__, __LINE__, "Method invocation on a disposed tool bar contribution item."); //$NON-NLS-1$
+                ExceptionPrintStackTrace( new Exception(null), & getDwtLogger().info );
             }
 
             return true;

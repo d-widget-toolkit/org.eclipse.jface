@@ -67,7 +67,6 @@ import tango.io.device.File;
         public synchronized void load( InputStream inStream ){
             char[] line;
             bool eof = false;
-            //tango.io.Stdout.Stdout.formatln( "properties put ..." );
             void readLine(){
                 line.length = 0;
                 char[1] rdbuf;
@@ -79,22 +78,18 @@ import tango.io.device.File;
                 eof = i !is 1;
             }
 
-            //tango.io.Stdout.Stdout.formatln( "properties put {}", __LINE__ );
             bool linecontinue = false;
             bool iskeypart = true;
             char[] key;
             char[] value;
     nextline:
             while( !eof ){
-                //tango.io.Stdout.Stdout.formatln( "properties put {} startline", __LINE__ );
                 readLine();
                 line = tango.text.Util.trim( line );
                 if( line.length == 0 ){
-                    //tango.io.Stdout.Stdout.formatln( "properties put {} was 0 length", __LINE__ );
                     continue;
                 }
                 if( line[0] == '#' ){
-                    //tango.io.Stdout.Stdout.formatln( "properties put {} was comment", __LINE__ );
                     continue;
                 }
                 int pos = 0;
@@ -144,15 +139,13 @@ import tango.io.device.File;
                     }
                 }
                 if( iskeypart ){
-                    tango.io.Stdout.Stdout.formatln( "dejavu.util.Properties put cannot find '='." );
+                    getDwtLogger().error( __FILE__, __LINE__, "put cannot find '='." );
                     continue;
                 }
                 key = tango.text.Util.trim( key );
                 value = tango.text.Util.trim(value);
-                //tango.io.Stdout.Stdout.formatln( "properties put {}=>{}", key, value );
 
                 map[ key.dup ] = value.dup;
-                //tango.io.Stdout.Stdout.formatln( "properties put {}", __LINE__ );
             }
         }
 

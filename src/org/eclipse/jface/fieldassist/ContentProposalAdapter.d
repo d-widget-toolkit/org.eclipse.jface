@@ -52,9 +52,7 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import java.lang.all;
 import java.util.Set;
 import java.lang.JThread;
-static import tango.text.Text;
-import tango.io.Stdout;
-alias tango.text.Text.Text!(char) StringBuffer;
+
 /**
  * ContentProposalAdapter can be used to attach content proposal behavior to a
  * control. This behavior includes obtaining proposals, opening a popup dialog,
@@ -1682,7 +1680,7 @@ public class ContentProposalAdapter {
      */
     private void addControlListener(Control control) {
         if (DEBUG) {
-            Stdout.formatln("ContentProposalListener#installControlListener()"); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "ContentProposalListener#installControlListener()"); //$NON-NLS-1$
         }
 
         if (controlListener !is null) {
@@ -1822,7 +1820,7 @@ public class ContentProposalAdapter {
                 sb.append(Format("; doit={}", e.doit)); //$NON-NLS-1$
                 sb.append(Format("; detail={}", e.detail, hex(e.detail))); //$NON-NLS-1$
                 sb.append(Format("; widget={}", e.widget)); //$NON-NLS-1$
-                Stdout.formatln("{}",sb.toString);
+                getDwtLogger.info( __FILE__, __LINE__, "{}",sb.toString);
             }
 
             private String hex(int i) {
@@ -1834,7 +1832,7 @@ public class ContentProposalAdapter {
         control.addListener(SWT.Modify, controlListener);
 
         if (DEBUG) {
-            Stdout.formatln("ContentProposalAdapter#installControlListener() - installed"); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "ContentProposalAdapter#installControlListener() - installed"); //$NON-NLS-1$
         }
     }
 
@@ -1856,7 +1854,7 @@ public class ContentProposalAdapter {
                 IContentProposal[] proposals = getProposals();
                 if (proposals.length > 0) {
                     if (DEBUG) {
-                        Stdout.formatln("POPUP OPENED BY PRECEDING EVENT"); //$NON-NLS-1$
+                        getDwtLogger.info( __FILE__, __LINE__, "POPUP OPENED BY PRECEDING EVENT"); //$NON-NLS-1$
                     }
                     recordCursorPosition();
                     popup = new ContentProposalPopup(null, proposals);
@@ -1996,7 +1994,7 @@ public class ContentProposalAdapter {
             return null;
         }
         if (DEBUG) {
-            Stdout.formatln(">>> obtaining proposals from provider"); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, ">>> obtaining proposals from provider"); //$NON-NLS-1$
         }
         int position = insertionPos;
         if (position is -1) {
@@ -2057,7 +2055,7 @@ public class ContentProposalAdapter {
      */
     private void notifyProposalAccepted(IContentProposal proposal) {
         if (DEBUG) {
-            Stdout.formatln("Notify listeners - proposal accepted."); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Notify listeners - proposal accepted."); //$NON-NLS-1$
         }
         Object[] listenerArray = proposalListeners.getListeners();
         for (int i = 0; i < listenerArray.length; i++) {
@@ -2071,7 +2069,7 @@ public class ContentProposalAdapter {
      */
     private void notifyPopupOpened() {
         if (DEBUG) {
-            Stdout.formatln("Notify listeners - popup opened."); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Notify listeners - popup opened."); //$NON-NLS-1$
         }
         Object[] listenerArray = proposalListeners2.getListeners();
         for (int i = 0; i < listenerArray.length; i++) {
@@ -2085,7 +2083,7 @@ public class ContentProposalAdapter {
      */
     private void notifyPopupClosed() {
         if (DEBUG) {
-            Stdout.formatln("Notify listeners - popup closed."); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Notify listeners - popup closed."); //$NON-NLS-1$
         }
         Object[] listenerArray = proposalListeners2.getListeners();
         for (int i = 0; i < listenerArray.length; i++) {

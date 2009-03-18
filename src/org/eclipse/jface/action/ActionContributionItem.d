@@ -52,7 +52,6 @@ import org.eclipse.jface.util.PropertyChangeEvent;
 import java.lang.all;
 import java.util.Set;
 import java.lang.JThread;
-import tango.io.Stdout;
 
 /**
  * A contribution item which delegates to an action.
@@ -578,7 +577,7 @@ public class ActionContributionItem : ContributionItem {
                 long ms = 0L;
                 if (trace) {
                     ms = System.currentTimeMillis();
-                    Stdout.formatln("Running action: {}", action.getText()); //$NON-NLS-1$
+                    getDwtLogger.info( __FILE__, __LINE__, "Running action: {}", action.getText()); //$NON-NLS-1$
                 }
 
                 IPropertyChangeListener resultListener = null;
@@ -614,7 +613,7 @@ public class ActionContributionItem : ContributionItem {
                     action.removePropertyChangeListener(resultListener);
                 }
                 if (trace) {
-                    Stdout.formatln("{} ms to run action: {}",(System.currentTimeMillis() - ms), action.getText()); //$NON-NLS-1$
+                    getDwtLogger.info( __FILE__, __LINE__, "{} ms to run action: {}",(System.currentTimeMillis() - ms), action.getText()); //$NON-NLS-1$
                 }
             } else {
                 if (callback !is null) {

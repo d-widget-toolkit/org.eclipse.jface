@@ -28,7 +28,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
-import tango.io.Stdout;
 import tango.core.Exception;
 
 /**
@@ -188,16 +187,16 @@ public abstract class ContributionManager : IContributionManager {
             size = contributions.size();
         }
 
-        Stdout.formatln(this.toString());
-        Stdout.formatln("   Number of elements: {}", size);//$NON-NLS-1$
+        getDwtLogger().info( __FILE__, __LINE__, "{}", this.toString());
+        getDwtLogger().info( __FILE__, __LINE__, "   Number of elements: {}", size);//$NON-NLS-1$
         int sum = 0;
         for (int i = 0; i < size; i++) {
             if ((cast(IContributionItem) contributions.get(i)).isVisible()) {
                 sum++;
             }
         }
-        Stdout.formatln("   Number of visible elements: {}", sum);//$NON-NLS-1$
-        Stdout.formatln("   Is dirty: {}", isDirty()); //$NON-NLS-1$
+        getDwtLogger().info( __FILE__, __LINE__, "   Number of visible elements: {}", sum);//$NON-NLS-1$
+        getDwtLogger().info( __FILE__, __LINE__, "   Is dirty: {}", isDirty()); //$NON-NLS-1$
     }
 
     /*
@@ -535,7 +534,7 @@ public abstract class ContributionManager : IContributionManager {
             IContributionItem item = cast(IContributionItem) contributions.get(i);
             if ((item !is null) && (identifier.equals(item.getId()))) {
                 if (Policy.TRACE_TOOLBAR) {
-                    Stdout.formatln("Removing duplicate on replace: {}", identifier); //$NON-NLS-1$
+                    getDwtLogger().info( __FILE__, __LINE__, "Removing duplicate on replace: {}", identifier); //$NON-NLS-1$
                 }
                 contributions.remove(i);
                 itemRemoved(item);

@@ -29,7 +29,6 @@ import org.eclipse.jface.util.ILogger;
 
 import java.lang.all;
 import java.util.Set;
-import tango.io.Stdout;
 
 /**
  * The Policy class handles settings for behaviour, debug flags and logging
@@ -81,13 +80,13 @@ public class Policy {
     private static ILogger getDummyLog() {
         return new class ILogger {
             public void log(IStatus status) {
-                Stderr.formatln(status.getMessage());
+                getDwtLogger.error( __FILE__, __LINE__, status.getMessage());
                 if (status.getException() !is null) {
                     auto e = status.getException();
-                    Stderr.formatln( "Exception of type {} in {}({}): {}", e.classinfo.name, e.file, e.line, e.msg );
+                    getDwtLogger.error( __FILE__, __LINE__,  "Exception of type {} in {}({}): {}", e.classinfo.name, e.file, e.line, e.msg );
                     if( e.info !is null ){
                         foreach( msg; e.info ){
-                            Stderr.formatln( "    trc: {}", msg );
+                            getDwtLogger.error( __FILE__, __LINE__,  "    trc: {}", msg );
                         }
                     }
 //                     status.getException().printStackTrace();

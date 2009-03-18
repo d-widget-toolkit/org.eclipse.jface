@@ -42,7 +42,6 @@ import org.eclipse.jface.util.PropertyChangeEvent;
 import java.lang.all;
 import java.util.ArrayList;
 import java.util.Set;
-import tango.io.Stdout;
 
 /**
  * A JFace window is an object that has no visual representation (no widgets)
@@ -393,7 +392,7 @@ public abstract class Window : IShellProvider {
             }
 
             if (nonDisposedImages.size() <= 0) {
-                Stderr.formatln("Window.configureShell: images disposed"); //$NON-NLS-1$
+                getDwtLogger.error( __FILE__, __LINE__, "Window.configureShell: images disposed"); //$NON-NLS-1$
             } else {
                 newShell.setImages(arraycast!(Image)(nonDisposedImages.toArray()));
             }

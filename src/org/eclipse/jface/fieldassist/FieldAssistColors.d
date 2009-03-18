@@ -27,7 +27,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
-import tango.io.Stdout;
 
 /**
  * FieldAssistColors defines protocol for retrieving colors that can be used to
@@ -170,8 +169,8 @@ public class FieldAssistColors {
         List toBeRemoved = new ArrayList(1);
 
         if (DEBUG) {
-            Stdout.formatln("Display map is {}", (cast(Object)displays).toString()); //$NON-NLS-1$
-            Stdout.formatln("Color map is {}", (cast(Object)requiredFieldColorMap).toString()); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Display map is {}", (cast(Object)displays).toString()); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Color map is {}", (cast(Object)requiredFieldColorMap).toString()); //$NON-NLS-1$
         }
 
         // Look for any stored colors that were created on this display
@@ -211,13 +210,13 @@ public class FieldAssistColors {
             displays.remove(color);
             // Dispose it
             if (DEBUG) {
-                Stdout.formatln("Disposing color {}", color.toString()); //$NON-NLS-1$
+                getDwtLogger.info( __FILE__, __LINE__, "Disposing color {}", color.toString()); //$NON-NLS-1$
             }
             color.dispose();
         }
         if (DEBUG) {
-            Stdout.formatln("Display map is {}", (cast(Object)displays).toString()); //$NON-NLS-1$
-            Stdout.formatln("Color map is {}", (cast(Object)requiredFieldColorMap).toString()); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Display map is {}", (cast(Object)displays).toString()); //$NON-NLS-1$
+            getDwtLogger.info( __FILE__, __LINE__, "Color map is {}", (cast(Object)requiredFieldColorMap).toString()); //$NON-NLS-1$
         }
     }
 

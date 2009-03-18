@@ -29,7 +29,6 @@ import java.lang.all;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 import java.lang.JThread;
-import tango.io.Stdout;
 
 /**
  * Utility class for supporting modal operations. The runnable passed to the
@@ -388,9 +387,9 @@ public class ModalContext {
                         if (debug_
                                 && !(cast(InterruptedException)throwable )
                                 && !(cast(OperationCanceledException)throwable )) {
-                            Stderr.formatln("Exception in modal context operation:"); //$NON-NLS-1$
+                            getDwtLogger.error( __FILE__, __LINE__, "Exception in modal context operation:"); //$NON-NLS-1$
                             ExceptionPrintStackTrace(throwable);
-                            Stderr.formatln("Called from:"); //$NON-NLS-1$
+                            getDwtLogger.error( __FILE__, __LINE__, "Called from:"); //$NON-NLS-1$
                             // Don't create the InvocationTargetException on the
                             // throwable,
                             // otherwise it will print its stack trace (from the

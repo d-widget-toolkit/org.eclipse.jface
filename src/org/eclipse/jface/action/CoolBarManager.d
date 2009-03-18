@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.HashMap;
 import java.util.Set;
-import tango.io.Stdout;
 
 /**
  * A cool bar manager is a contribution manager which realizes itself and its
@@ -205,9 +204,9 @@ public class CoolBarManager : ContributionManager,
             String secondId = currentItem.getId();
             if (firstId.equals(secondId)) {
                 if (Policy.TRACE_TOOLBAR) {
-                    Stdout.formatln("Trying to add a duplicate item."); //$NON-NLS-1$
-                    ExceptionPrintStackTrace(new Exception(null), Stdout );
-                    Stdout.formatln("DONE --------------------------"); //$NON-NLS-1$
+                    getDwtLogger().info( __FILE__, __LINE__, "Trying to add a duplicate item."); //$NON-NLS-1$
+                    ExceptionPrintStackTrace(new Exception(null), & getDwtLogger().info );
+                    getDwtLogger().info( __FILE__, __LINE__, "DONE --------------------------"); //$NON-NLS-1$
                 }
                 return false;
             }
