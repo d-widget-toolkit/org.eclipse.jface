@@ -20,7 +20,6 @@ import org.eclipse.jface.viewers.IElementComparer;
 
 import java.lang.all;
 import java.util.Enumeration;
-import tango.core.Exception;
 static import tango.text.Text;
 alias tango.text.Text.Text!(char) StringBuffer;
 

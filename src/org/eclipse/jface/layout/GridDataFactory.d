@@ -22,7 +22,6 @@ import org.eclipse.swt.widgets.Control;
 
 import java.lang.all;
 import java.util.Set;
-import tango.core.Exception;
 
 /**
  * This class provides a convienient shorthand for creating and initializing

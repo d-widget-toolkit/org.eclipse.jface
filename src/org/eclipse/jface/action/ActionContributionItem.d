@@ -51,7 +51,7 @@ import org.eclipse.jface.util.PropertyChangeEvent;
 
 import java.lang.all;
 import java.util.Set;
-import java.lang.JThread;
+import java.lang.Thread;
 
 /**
  * A contribution item which delegates to an action.
@@ -186,7 +186,7 @@ public class ActionContributionItem : ContributionItem {
 
         if (isVisible() && widget !is null) {
             Display display = widget.getDisplay();
-            if (display.getThread() is JThread.currentThread().nativeThread()) {
+            if (display.getThread() is Thread.currentThread().nativeThread()) {
                 update(e.getProperty());
             } else {
                 display.asyncExec(dgRunnable( (PropertyChangeEvent e_) {

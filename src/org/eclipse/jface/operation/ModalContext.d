@@ -28,7 +28,7 @@ import org.eclipse.jface.operation.AccumulatingProgressMonitor;
 import java.lang.all;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
-import java.lang.JThread;
+import java.lang.Thread;
 
 /**
  * Utility class for supporting modal operations. The runnable passed to the
@@ -67,7 +67,7 @@ public class ModalContext {
     /**
      * Thread which runs the modal context.
      */
-    private static class ModalContextThread : JThread {
+    private static class ModalContextThread : Thread {
         /**
          * The operation to be run.
          */
@@ -98,7 +98,7 @@ public class ModalContext {
          *
          * @since 3.1
          */
-        private JThread callingThread;
+        private Thread callingThread;
 
         /**
          * Creates a new modal context.
@@ -118,7 +118,7 @@ public class ModalContext {
             runnable = operation;
             progressMonitor = new AccumulatingProgressMonitor(monitor, display);
             this.display = display;
-            this.callingThread = JThread.currentThread();
+            this.callingThread = Thread.currentThread();
         }
 
         /*
@@ -274,7 +274,7 @@ public class ModalContext {
      * context is active.
      */
     private static ModalContextThread getCurrentModalContextThread() {
-        JThread t = JThread.currentThread();
+        Thread t = Thread.currentThread();
         if ( auto r = cast(ModalContextThread)t ) {
             return r;
         }
@@ -305,7 +305,7 @@ public class ModalContext {
      * @return <code>true</code> if the given thread is running a modal
      *         context, <code>false</code> if not
      */
-    public static bool isModalContextThread(JThread thread) {
+    public static bool isModalContextThread(Thread thread) {
         return (cast(ModalContextThread)thread) !is null;
     }
 
@@ -426,7 +426,7 @@ public class ModalContext {
      *            the {@link Thread} being switched to
      */
     static Exception invokeThreadListener(IThreadListener listener,
-            JThread switchingThread) {
+            Thread switchingThread) {
         try {
             listener.threadChange(switchingThread);
 //         } catch (ThreadDeath e) {

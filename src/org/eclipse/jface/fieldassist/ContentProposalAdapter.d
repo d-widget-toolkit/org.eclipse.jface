@@ -51,7 +51,7 @@ import org.eclipse.jface.viewers.ILabelProvider;
 
 import java.lang.all;
 import java.util.Set;
-import java.lang.JThread;
+import java.lang.Thread;
 
 /**
  * ContentProposalAdapter can be used to attach content proposal behavior to a
@@ -933,7 +933,7 @@ public class ContentProposalAdapter {
                         pendingDescriptionUpdate = true;
 
                         try {
-                            JThread.sleep( POPUP_DELAY );
+                            Thread.sleep( POPUP_DELAY );
                         }
                         catch (InterruptedException e) {
                         }
@@ -975,7 +975,7 @@ public class ContentProposalAdapter {
                         });
                     }
                 };
-                JThread t = new JThread(r);
+                Thread t = new Thread(r);
                 t.start();
             }
         }
@@ -2018,7 +2018,7 @@ public class ContentProposalAdapter {
                 public void run(){
                     receivedKeyDown = false;
                     try {
-                        JThread.sleep(autoActivationDelay);
+                        Thread.sleep(autoActivationDelay);
                     } catch (InterruptedException e) {
                     }
                     if (!isValid() || receivedKeyDown) {
@@ -2031,7 +2031,7 @@ public class ContentProposalAdapter {
                     });
                 }
             };
-            JThread t = new JThread(r);
+            Thread t = new Thread(r);
             t.start();
         } else {
             // Since we do not sleep, we must open the popup

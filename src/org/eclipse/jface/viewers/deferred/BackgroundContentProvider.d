@@ -30,7 +30,7 @@ import org.eclipse.jface.viewers.IFilter;
 
 import java.lang.all;
 import java.util.Set;
-import java.lang.JThread;
+import java.lang.Thread;
 
 /**
  * Contains the algorithm for performing background sorting and filtering in a virtual
@@ -142,7 +142,7 @@ import java.lang.JThread;
     private ConcurrentTableUpdator updator;
 
     private IProgressMonitor sortingProgressMonitor;
-    private JThread sortThread = null;
+    private Thread sortThread = null;
 
     private /+volatile+/ FastProgressReporter sortMon;
 
@@ -477,7 +477,7 @@ import java.lang.JThread;
      */
     private bool sortScheduled = false;
 
-    private final class SortThread : JThread {
+    private final class SortThread : Thread {
         private this(String name) {
             super(name);
         }

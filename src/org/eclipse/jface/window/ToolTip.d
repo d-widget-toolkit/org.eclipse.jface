@@ -35,7 +35,7 @@ import org.eclipse.swt.widgets.Shell;
 import java.lang.all;
 import java.util.HashMap;
 import java.util.Set;
-import java.lang.JThread;
+import java.lang.Thread;
 /**
  * This class gives implementors to provide customized tooltips for any control.
  *
@@ -495,7 +495,7 @@ public abstract class ToolTip {
             display.asyncExec(dgRunnable( delegate(Display display_, Event newEvent_) {
                 if (IS_OSX) {
                     try {
-                        JThread.sleep(300);
+                        Thread.sleep(300);
                     } catch (InterruptedException e) {
 
                     }

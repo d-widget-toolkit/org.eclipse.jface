@@ -13,7 +13,7 @@
 module org.eclipse.jface.operation.IThreadListener;
 
 import java.lang.all;
-import java.lang.JThread;
+import java.lang.Thread;
 
 /**
  * A thread listener is an object that is interested in receiving notifications
@@ -29,5 +29,5 @@ public interface IThreadListener {
      *
      * @param thread The new thread
      */
-    public void threadChange(JThread thread);
+    public void threadChange(Thread thread);
 }

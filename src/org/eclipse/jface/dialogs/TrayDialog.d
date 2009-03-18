@@ -42,7 +42,6 @@ import org.eclipse.jface.window.IShellProvider;
 
 import java.lang.all;
 import java.util.Set;
-import tango.core.Exception;
 
 /**
  * A <code>TrayDialog</code> is a specialized <code>Dialog</code> that can contain

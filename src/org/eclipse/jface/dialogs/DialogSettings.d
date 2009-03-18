@@ -34,7 +34,6 @@ static import tango.text.Text;
 static import tango.io.stream.Format;
 static import tango.io.model.IConduit;
 import tango.io.device.File;
-import tango.core.Exception;
 import java.nonstandard.XmlTranscode;
 
 /**

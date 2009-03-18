@@ -22,7 +22,6 @@ import java.util.TreeSet;
 
 import java.lang.all;
 import java.util.Set;
-import tango.core.Exception;
 private extern(C) int _d_isbaseof(ClassInfo *b, ClassInfo *c);
 
 /**
