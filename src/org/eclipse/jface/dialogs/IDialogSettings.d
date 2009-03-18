@@ -12,11 +12,9 @@
  *******************************************************************************/
 module org.eclipse.jface.dialogs.IDialogSettings;
 
-// import java.io.IOException;
-// import java.io.Reader;
-// import java.io.Writer;
-
 import java.lang.all;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.Set;
 
 static import tango.io.model.IConduit;
