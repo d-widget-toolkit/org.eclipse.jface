@@ -18,6 +18,7 @@ import org.eclipse.jface.dialogs.IDialogSettings;
 static import tango.text.xml.Document;
 static import tango.text.xml.SaxParser;
 static import tango.text.xml.PullParser;
+import tango.core.Exception;
 
 import java.lang.all;
 import java.util.Enumeration;
