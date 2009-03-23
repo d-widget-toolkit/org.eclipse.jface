@@ -125,6 +125,9 @@ public final class Scheme : NamedHandleObject, Comparable {
 
         return compareTo;
     }
+    public final override int opCmp( Object object ){
+        return compareTo( object );
+    }
 
     /**
      * <p>

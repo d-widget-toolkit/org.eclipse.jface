@@ -203,6 +203,9 @@ public final class KeyStroke : Trigger, Comparable {
 
         return compareTo;
     }
+    public override int opCmp( Object object ){
+        return compareTo( object );
+    }
 
     /*
      * (non-Javadoc)

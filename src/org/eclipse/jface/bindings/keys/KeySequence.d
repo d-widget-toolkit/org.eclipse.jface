@@ -218,6 +218,9 @@ public final class KeySequence : TriggerSequence, Comparable {
         KeySequence castedObject = cast(KeySequence) object;
         return Util.compare( arraycast!(Comparable)(triggers), arraycast!(Comparable)(castedObject.triggers));
     }
+    public final override int opCmp( Object object ){
+        return compareTo( object );
+    }
 
     /**
      * Formats this key sequence into the current default look.
