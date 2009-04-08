@@ -186,12 +186,12 @@ public class ActionContributionItem : ContributionItem {
 
         if (isVisible() && widget !is null) {
             Display display = widget.getDisplay();
-            if (display.getThread() is Thread.currentThread().nativeThread()) {
+            if (display.getThread() is Thread.currentThread()) {
                 update(e.getProperty());
             } else {
-                display.asyncExec(dgRunnable( (PropertyChangeEvent e_) {
-                    update(e_.getProperty());
-                }, e));
+                display.asyncExec(dgRunnable( (ActionContributionItem pthis, PropertyChangeEvent e_) {
+                    pthis.update(e_.getProperty());
+                }, this, e));
             }
 
         }
