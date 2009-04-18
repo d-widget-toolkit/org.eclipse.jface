@@ -62,10 +62,10 @@ public abstract class Action : AbstractAction, IAction {
                 return null;
             }
         };
-        VAL_RADIO_BTN_OFF = new ValueWrapperInt(0);
-        VAL_RADIO_BTN_ON = new ValueWrapperInt(1);
-        VAL_TOGGLE_BTN_OFF = new ValueWrapperBool(false);
-        VAL_TOGGLE_BTN_ON = new ValueWrapperBool(true);
+        VAL_RADIO_BTN_OFF = new Integer(0);
+        VAL_RADIO_BTN_ON = new Integer(1);
+        VAL_TOGGLE_BTN_OFF = new Boolean(false);
+        VAL_TOGGLE_BTN_ON = new Boolean(true);
     }
 
     /*
@@ -74,13 +74,13 @@ public abstract class Action : AbstractAction, IAction {
      */
     private static const String VAL_PUSH_BTN = "PUSH_BTN"; //$NON-NLS-1$
 
-    private static const ValueWrapperInt VAL_RADIO_BTN_OFF;
+    private static const Integer VAL_RADIO_BTN_OFF;
 
-    private static const ValueWrapperInt VAL_RADIO_BTN_ON;
+    private static const Integer VAL_RADIO_BTN_ON;
 
-    private static const ValueWrapperBool VAL_TOGGLE_BTN_OFF;
+    private static const Boolean VAL_TOGGLE_BTN_OFF;
 
-    private static const ValueWrapperBool VAL_TOGGLE_BTN_ON;
+    private static const Boolean VAL_TOGGLE_BTN_ON;
 
     /**
      * Converts an accelerator key code to a string representation.

@@ -187,7 +187,7 @@ public class ComboBoxCellEditor : AbstractComboBoxCellEditor {
      *         <code>Integer</code>
      */
     protected override Object doGetValue() {
-        return new ValueWrapperInt(selection);
+        return new Integer(selection);
     }
 
     /*
@@ -229,8 +229,8 @@ public class ComboBoxCellEditor : AbstractComboBoxCellEditor {
      *            <code>Integer</code>
      */
     protected override void doSetValue(Object value) {
-        Assert.isTrue(comboBox !is null && (cast(ValueWrapperInt)value ));
-        selection = (cast(ValueWrapperInt) value).value;
+        Assert.isTrue(comboBox !is null && (cast(Integer)value ));
+        selection = (cast(Integer) value).intValue();
         comboBox.select(selection);
     }
 

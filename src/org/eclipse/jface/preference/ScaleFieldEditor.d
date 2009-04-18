@@ -379,8 +379,8 @@ public class ScaleFieldEditor : FieldEditor {
         int newValue = scale.getSelection();
         if (newValue !is oldValue) {
             fireStateChanged(IS_VALID, false, true);
-            fireValueChanged(VALUE, new ValueWrapperInt(oldValue),
-                    new ValueWrapperInt(newValue));
+            fireValueChanged(VALUE, new Integer(oldValue),
+                    new Integer(newValue));
             oldValue = newValue;
         }
     }

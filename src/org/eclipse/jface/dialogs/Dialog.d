@@ -648,10 +648,10 @@ public abstract class Dialog : Window {
         Button button = new Button(parent, SWT.PUSH);
         button.setText(label);
         button.setFont(JFaceResources.getDialogFont());
-        button.setData(new ValueWrapperInt(id));
+        button.setData(new Integer(id));
         button.addSelectionListener(new class SelectionAdapter {
             public void widgetSelected(SelectionEvent event) {
-                buttonPressed((cast(ValueWrapperInt) event.widget.getData()).value);
+                buttonPressed((cast(Integer) event.widget.getData()).intValue());
             }
         });
         if (defaultButton) {
