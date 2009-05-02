@@ -30,7 +30,7 @@ import java.util.Collection;
  * @since 2.1
  * @noextend This class is not intended to be subclassed by clients.
  */
-public class ArrayContentProvider(T) : IStructuredContentProvider {
+public class ArrayContentProviderT(T) : IStructuredContentProvider {
 
     /**
      * Returns the elements in the input, which must be either an array or a
@@ -60,3 +60,5 @@ public class ArrayContentProvider(T) : IStructuredContentProvider {
         // do nothing.
     }
 }
+alias ArrayContentProviderT!(Object) ArrayContentProvider;
+
