@@ -14,6 +14,8 @@
 
 module org.eclipse.jface.viewers.CellEditor;
 
+import java.lang.all;
+
 import org.eclipse.jface.viewers.ICellEditorValidator;
 import org.eclipse.jface.viewers.ICellEditorListener;
 import org.eclipse.jface.viewers.ColumnViewerEditorActivationEvent;
@@ -30,7 +32,6 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.util.SafeRunnable;
 
-import java.lang.all;
 import java.util.List;
 import java.util.Set;
 

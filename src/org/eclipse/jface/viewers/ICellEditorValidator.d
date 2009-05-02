@@ -13,6 +13,7 @@
 module org.eclipse.jface.viewers.ICellEditorValidator;
 
 import java.lang.all;
+import java.lang.String; // see DMD bug 2919
 
 /**
  * An interface for validating a cell editor's input.
